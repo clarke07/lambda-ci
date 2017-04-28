@@ -1,6 +1,6 @@
 test:
   override:
-    - echo test
+    - python test.py
     
 deployment:
   master:
