@@ -1,3 +1,3 @@
 def lambda_handler(event, context):
     # TODO implement
-    return 'Hello from Lambda zip git'
+    return 'Hello from Lambda 2345'
