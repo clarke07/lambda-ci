@@ -2,4 +2,6 @@ deployment:
   master:
     branch: master
     commands:
-      - node node_modules/gulp/bin/gulp.js deploy
+      # - node node_modules/gulp/bin/gulp.js deploy
+      - zip app.zip app.py
+      - aws lambda update-function-code --function-name clarkePythonLambda --zip-file fileb://./app.zip
