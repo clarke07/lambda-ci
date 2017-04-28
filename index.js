@@ -15,7 +15,7 @@ exports.handler = function(event, context) {
     console.log('Received event:', JSON.stringify(event, null, 2));
     var operation = event.operation;
     if(operation === 'succeed') {
-        context.succeed(event.payload.value1);
+        context.succeed(event.payload);
     } else {
         context.fail('failure occurred');
     }
