@@ -6,7 +6,7 @@ deployment:
   master:
     branch: master
     commands:
-      - zip app.zip app.py
+      - zip app.zip app.py gems.zip
       - aws configure set default.region us-west-2
       - aws configure set aws_access_key_id $AWSKEY
       - aws configure set aws_secret_access_key $AWSSECRETKEY
