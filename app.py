@@ -1,3 +1,3 @@
 def lambda_handler(event, context):
     # TODO implement
-    return 'Hello from Lambda large'
+    return 'Hello from Lambda v1'
