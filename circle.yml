@@ -1,3 +1,7 @@
+machine:
+  environment:
+    VERSION: '3.0.0'
+
 test:
   override:
     - python test.py
@@ -6,7 +10,7 @@ deployment:
   master:
     branch: master
     commands:
-      - zip app.zip app.py gems.zip gems2.zip
+      - zip ${VERSION}.zip app.py gems.zip gems2.zip
       - aws configure set default.region us-west-2
       - aws configure set aws_access_key_id $AWSKEY
       - aws configure set aws_secret_access_key $AWSSECRETKEY
