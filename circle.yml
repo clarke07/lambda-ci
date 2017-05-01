@@ -6,8 +6,9 @@ deployment:
   master:
     branch: master
     commands:
-      - zip app.zip app.py gems.zip
+      - zip app.zip app.py gems.zip gems2.zip
       - aws configure set default.region us-west-2
       - aws configure set aws_access_key_id $AWSKEY
       - aws configure set aws_secret_access_key $AWSSECRETKEY
-      - aws lambda update-function-code --function-name clarkePythonLambda --zip-file fileb://./app.zip
+      - aws s3 cp app.zip s3://clarke-test-lambda-ci/
+      - aws lambda update-function-code --function-name clarkePythonLambda --s3-bucket clarke-test-lambda-ci --s3-key app.zip
